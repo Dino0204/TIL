@@ -4,21 +4,21 @@ class Vehicle:
     self.model = model
     self.year = year
   def drive (self):
-    return format(f"{self.brand} {self.model} is now driving.")
+    return f"{self.brand} {self.model} is now driving."
 
 class Car(Vehicle):
   def __init__(self,brand,model,year,fuel_type):
     super().__init__(brand,model,year)
     self.fuel_type = fuel_type
   def refuel(self):
-    return format(f"{self.brand} {self.model} is refueling with {self.fuel_type}")
+    return f"{self.brand} {self.model} is refueling with {self.fuel_type}"
 
 class ElectricCar(Vehicle):
   def __init__(self,brand,model,year, battery_capacity):
     super().__init__(brand,model,year)
     self.battery_capacity = battery_capacity
   def charge(self):
-    return format(f"{self.brand} {self.model} is charging with {self.battery_capacity} k/w battery.")
+    return f"{self.brand} {self.model} is charging with {self.battery_capacity} k/w battery."
 
 class Garage:
   def __init__(self,capacity):
@@ -27,20 +27,16 @@ class Garage:
   
   def add_vehicle(self,car):
     if len(self.cars) == self.capacity:
-      return format("Garage is full, cannot add more vehicles.")
-    else:
-      self.cars.append(car)
-    return format(f"{car.brand} {car.model} has been added to the garage.")
+      return "Garage is full, cannot add more vehicles."
+    self.cars.append(car)
+    return f"{car.brand} {car.model} has been added to the garage."
   
   def remove_vehicle(self,car):
     self.cars.remove(car)
-    return format(f"{car.brand} {car.model} has been removed from the garage.")
+    return f"{car.brand} {car.model} has been removed from the garage."
   
   def list_vehicles(self):
-    print_cars = []
-    for car in self.cars:
-      print_cars.append(f"{car.brand} {car.model}")
-    return "\n".join(print_cars)
+    return "\n".join([f"{car.brand} {car.model}" for car in self.cars])
 
 
 car = Car("Toyota","Carmy",2020,"Gasoline")
