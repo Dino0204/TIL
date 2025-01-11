@@ -61,7 +61,6 @@ class SmartHome:
   def list_devices(self):
     return "\n".join(f"{device.name} is {device.get_status()}." for device in self.devices)
   
-  # run
   def run_schedules(self,time):
     return "\n".join(f"{device.adjust_brightness((device.schedules[time])) if type(device).__name__ == "Light" else device.set_temperature((device.schedules[time]))}" for device in self.devices)
 
