@@ -26,7 +26,6 @@ class Light(Device):
 
   def schedule_brightness(self,time,brightness):
     self.schedules[time] = brightness
-
     return f"{self.name}'s brightness is scheduled to {brightness} at {time}."
 
 class Thermostat(Device):
