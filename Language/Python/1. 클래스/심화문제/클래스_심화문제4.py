@@ -10,10 +10,16 @@ class MenuItem:
 class Order:
   def __init__(self):
     self.items = []
+    self.categories = {}
     self.discount_num = 0
   
   def add_item(self,item):
     self.items.append(item)
+    
+    if not item.category in self.categories:
+      self.categories[item.category] = []
+    self.categories[item.category] .append(item)
+    
     return f"{item.name} added to the order."
   
   def remove_item(self,item_name):
@@ -32,7 +38,17 @@ class Order:
     return "\n".join([item.details() for item in self.items])
   
   def list_items_by_category(self):
-    return "\n".join([item.details() for item in self.items])
+    
+    list_items = []
+    
+    for category in self.categories:
+      list_items.append(f"Category: {category}")
+      for item in self.items:
+        if item.category == category:
+          list_items.append(item.details())
+    
+    return f"\n".join(list_items)
+
   
   def apply_discount(self,discount_num):
     self.discount_num = discount_num
@@ -52,9 +68,9 @@ print(order.add_item(menu_item4))
 
 print(order.list_items()) 
 
-# print(order.list_items_by_category())
+print(order.list_items_by_category())
 print(order.remove_item("Pizza"))
-# print(order.list_items_by_category())
+print(order.list_items_by_category())
 
 print(order.calculate_total())
 print(order.apply_discount(10))
