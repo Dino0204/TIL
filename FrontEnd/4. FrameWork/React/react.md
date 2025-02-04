@@ -1,16 +1,3 @@
-리액트 개발을 위한 첫 걸음
-
-개발 환경 및 개발 도구 사용법 학습
-
-웹페이지 작성법, 소프트웨어 디자인 패턴, 코드 작성법
-
-목차
-
-1. 리액트 시작하기
-2. ES6 문법
-3. 컴포넌트
-4. 디자인 시스템
-
 # 1. 리액트 시작하기
 
 ---
@@ -42,9 +29,9 @@
 
 예를 들어 하나의 컴포넌트가 레고 조각이고 이 조각들을 하나로 합친다고 생각하면 된다.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/a58d5064-1880-4de1-a993-b4d5cddafd5a/9fd710f1-555e-451a-844d-b798b4504dde/image.png)
+![lego.png](https://cdn3d.iconscout.com/3d/premium/thumb/lego-bricks-3d-icon-download-in-png-blend-fbx-gltf-file-formats--logo-kids-toy-cubes-activities-pack-people-icons-9802168.png?f=webp)
 
-![file.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/a58d5064-1880-4de1-a993-b4d5cddafd5a/33059472-3183-4958-97bd-3a67b572112a/file.png)
+![react.png](https://cdn3d.iconscout.com/3d/free/thumb/free-react-9294867-7578010.png?f=webp)
 
 또한 가상 화면 기술로 화면 출력 속도가 빠르며 코드의 복잡성이 낮다.
 
@@ -74,7 +61,7 @@ NPM은 실제로 **node_modules** 폴더에 라이브러리를 저장하고 **pa
 
 그렇다면 웹팩이 필요한 이유는 무엇일까? 프레임워크는 **기존 파일 형식**인 .js , .css등을 사용하지 않는 경우가 많다. 예를 들어 .jsx등이 있다. 그런데 웹 브라우저는 이러한 독자적인 파일 형식을 이해하지 못한다. 따라서 이를 **해석해주는 도구**가 필요한데 그 역할을 해주는 도구가 바로 **웹팩**이다!
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/a58d5064-1880-4de1-a993-b4d5cddafd5a/cdf01c57-2840-4a13-bf14-ca0e26ae1f19/image.png)
+![bundling.png](https://velog.velcdn.com/images/rlagurtn1/post/cf356167-1430-480d-b575-e49719c35e7b/image.png)
 
 웹팩은 웹 브라우저가 파일을 해석할 수 있도록 **해석**해주고 **불필요한 파일을 삭제**하거나 **압축**하여 **용량을 줄여주는 역할**을 하기도 한다.
 
@@ -321,7 +308,7 @@ var { key1, ...other } = { key1: "one", key2: "two" };
 
 기존 자바스크립트에서는 의존성을 <script>를 통해 관리하였고 참조 순서에 따른 의존성 문제가 발생하여 ES6 문법을 통해 이를 해결하였습니다. ES6 문법은 import 구문을 사용하여 구동 합니다.
 
-```jsx
+```js
 // 1. 기존 자바스크립트
 <script src="example.com"> </script>
 
